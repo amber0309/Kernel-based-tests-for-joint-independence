@@ -156,7 +156,7 @@ def dhsic_test(X, alpha=0.05, method='permutation'):
 
 def dhsic(X):
 	'''
-	conpute the dHSIC value 
+	compute the dHSIC value 
 
 	INPUT
 	  X 		- matrix of all instances, (n_samples, n_vars) numpy array

@@ -4,7 +4,7 @@ Python code of independence test algorithm proposed in
 
 [Kernel‐based tests for joint independence](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/rssb.12235?casa_token=1akkBcxMiBUAAAAA%3AG5ZNfHSt55CNjciCMT2R6uUTMx0RZ8ElretpE6jQgJbDkHombBp0OTG_oIkeqAOhlZ-u6Q5GYjsyG3tGcg)  
 Niklas Pfister, Peter Bühlmann, Bernhard Schölkopf, Jonas Peters  
-Journal of the Royal Statistical Society: Series B (Statistical Methodology) 80.1 (2018): 5-31.
+*Journal of the Royal Statistical Society: Series B (Statistical Methodology)* 80.1 (2018): 5-31.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ We test the code using python 3.6.8 on Windows 10. Any later version should stil
 
 ## Running the test
 
-After installing all required packages, you can run *demo.py* to see whether **dHSIC** could work normally.
+After installing all required packages, you can run *demo.py* to see whether `dhsic` could work normally.
 
 The test code does the following:
 
@@ -25,7 +25,7 @@ The test code does the following:
 3. changes variable 3 to be dependent on variable 1 and 2
 4. applies joint independence test on the updated data.
 
-## Apply **dhsic_test** on your data
+## Apply `dhsic` on your data
 
 ### Usage
 

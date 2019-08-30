@@ -1,6 +1,5 @@
 """
 Implementation of dHSIC proposed in [1]
-(Note: the method eigenvalue is still problematic)
 
 Shoubo Hu (shoubo.sub [at] gmail.com)
 2019-08-29
@@ -139,14 +138,14 @@ def dhsic_test(X, alpha=0.05, method='permutation'):
 		a6 = -a6
 		a7 = a6.T
 		a8 = a8
-		a9 = np.tile(a9, (1,n))
+		a9 = np.tile(a9*(1-d), (1,n))
 		a10 = a9.T
 
 		H2 = (a1+a2+a3+a4+a5+a6+a7+a8+a9+a10) / (d*(2*d-1))
 		eigenvalues = np.sort( np.linalg.eigvalsh(H2)/n )[::-1].reshape(-1,1)
 
 		M = 5000
-		Z = [ np.random.randn(n,1)**2 * eigenvalues for _ in range(M) ]
+		Z = [ (np.random.randn(n,1)**2) * eigenvalues for _ in range(M) ]
 		chi_dist = d*(2*d-1)*np.sum( np.concatenate(Z, axis = 1), axis = 0 )
 		critical_val = np.percentile( chi_dist, (1-alpha)*100 )
 		ecdf = ECDF(chi_dist)

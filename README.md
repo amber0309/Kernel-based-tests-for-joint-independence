@@ -21,9 +21,9 @@ After installing all required packages, you can run *demo.py* to see whether `dh
 The test code does the following:
 
 1. generates 100 instances (a (100, 3) *numpy array*) from 3 jointly independent variables;
-2. apples joint independence test on the data
+2. applies `dhsic` joint independence test on the data
 3. changes variable 3 to be dependent on variable 1 and 2
-4. applies joint independence test on the updated data.
+4. applies `dhsic` joint independence test on the updated data.
 
 ## Apply `dhsic` on your data
 
@@ -32,8 +32,8 @@ The test code does the following:
 ```python
 from dhsic import dhsic_test, dhsic
 
-res = dhsic_test(X)
-res = dhsic(X)
+res = dhsic_test(X) # conduct joint independence test
+res = dhsic(X)      # compute the dHSIC value
 ```
 
 ### Description
@@ -42,19 +42,19 @@ Function `dhsic_test()`
 
 | Argument  | Description  |
 |---|---|
-|X | matrix of all instances, (n_samples, n_vars) numpy array |
+|X | matrix of all instances, `(n_samples, n_vars)` numpy array |
 |alpha (optional) | level of the test |
 |method (optional) | method of the test |
 
 | Output  | Description  |
 |---|---|
-| res | distionary containing test statistic, critical value, p-value and the method name |
+| res | dictionary containing test statistic, critical value, p-value and the name of the test method |
 
 Function `dhsic()`
 
 | Argument  | Description  |
 |---|---|
-|X | matrix of all instances, (n_samples, n_vars) numpy array |
+|X | matrix of all instances, `(n_samples, n_vars)` numpy array |
 
 | Output  | Description  |
 |---|---|
